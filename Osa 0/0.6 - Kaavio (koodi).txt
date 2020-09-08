@@ -1,0 +1,21 @@
+note over selain:
+spa.js-tiedostoa käyttävä sivu
+on auki selaimessa ja käyttäjä
+antaa uuden syötteen
+end note
+
+selain->palvelin: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+
+note over palvelin:
+spa.js käsittelee syötteen ja lisää
+syötteen sekä palvelimen muistiin... 
+end note
+
+
+palvelin-->selain: Pyyntö suorittaa komento spa.js-komento "form.onsubmit"
+
+note over selain:
+...että selaimen näkymään. Tämä
+toiminto ei tarkista data.json:ia
+päivitettyjen tietojen varalta
+end note

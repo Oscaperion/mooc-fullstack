@@ -1,0 +1,16 @@
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+palvelin-->selain: HTML-koodi
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+palvelin-->selain: main.css
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+palvelin-->selain: spa.js
+note over selain:
+Selain alkaa suorittamaan
+spa.js-tiedostoa
+end note
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+palvelin-->selain: data.json (esim. [{ content: "Lorem Ipsum Alpha", date: "2020-09-07" }, ...])
+note over selain:
+spa.js käsittelee data.json-tiedoston
+sisällön ja esittää sen käyttäjälle
+end note

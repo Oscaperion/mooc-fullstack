@@ -1,0 +1,27 @@
+note over selain:
+Käyttäjällä on notes-sivu auki ja
+hän on kirjoittanut syötteen
+end note 
+
+selain->palvelin: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+note over palvelin:
+Palvelin tallentaa käyttäjän syötteen tiedostoon data.json;
+Toimenpide ei vuorovaikuta tietokannan kanssa
+end note
+palvelin-->selain: Uudelleenohjauspyyntö sivulle notes
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+palvelin-->selain: HTML-koodi
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+palvelin-->selain: main.css
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+palvelin-->selain: main.js
+note over selain:
+Selain alkaa suorittamaan
+main.js-tiedostoa
+end note
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+palvelin-->selain: data.json (esim. [{ content: "Lorem Ipsum", date: "2020-09-07" }, ...])
+note over selain:
+main.js käsittelee data.json-tiedoston
+sisällön ja esittää sen käyttäjälle
+end note
